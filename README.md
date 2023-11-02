@@ -52,3 +52,18 @@ Kafka’s having more than one broker are called as Kafka cluster. A Kafka clust
 Producers
 
 Producers are the publisher of messages to one or more Kafka topics. Producers send data to Kafka brokers. Every time a producer pub-lishes a message to a broker, the broker simply appends the message to the last segment file. Actually, the message will be appended to a partition. Producer can also send messages to a partition of their choice.
+
+
+Consumers
+
+Consumers read data from brokers. Consumers subscribes to one or more topics and consume published messages by pulling data from the brokers.
+
+9	
+Leader
+
+Leader is the node responsible for all reads and writes for the given partition. Every partition has one server acting as a leader.
+
+10	
+Follower
+
+Node which follows leader instructions are called as follower. If the leader fails, one of the follower will automatically become the new leader. A follower acts as normal consumer, pulls messages and up-dates its own data store.
